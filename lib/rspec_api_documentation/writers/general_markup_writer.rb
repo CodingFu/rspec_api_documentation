@@ -15,7 +15,7 @@ module RspecApiDocumentation
           FileUtils.mkdir_p(configuration.docs_dir.join(markup_example.dirname))
 
           File.open(configuration.docs_dir.join(markup_example.dirname, markup_example.filename), "w+") do |f|
-            f.write markup_example.render
+            f.write markup_example.render.force_encoding("utf8")
           end
         end
       end
